@@ -6,9 +6,9 @@ HTML search and replace command line tool with only Perl as a dependency. Uses i
 Generate a sample "rfile":
 `perl dwreplace.pl --e > /tmp/myreplacements.rfile`
 
-Edit rfile, one block for reach replacement:
+Edit rfile, one block per replacement:
 ```
-# first replace the top nav with some PHP
+# example: replace the top nav with some PHP
 $OLD[0] = <<'END_OF_TEXT';
 {$topnav}
 END_OF_TEXT
@@ -26,13 +26,15 @@ $NEW[1] = <<'END_OF_TEXT';
 </head>
 END_OF_TEXT
 ```
-Run dwreplace on content, ususally combined with "find", using --s for "search only":
+Run dwreplace on content, (typically) combined with "find", using --s for "search only":
 
 ` find . -print0 | grep \.htm | perl  ~/dev/dwreplace/dwreplace.pl --null --s --rfile=myreplacements.rfile `
 
 This will show you how many matches would have been made. Modify your rfile until "2 matches found" is printed for all files.
 
 Remove --s to do final replacement.
+
+` find . -print0 | grep \.htm | perl  ~/dev/dwreplace/dwreplace.pl --null --rfile=myreplacements.rfile `
 
 This tool was featured in Sysadmin Mag (later Dr. Dobb's Journal) in 2006. [Dr. Dobb's article](http://www.drdobbs.com/better-find-and-replace-on-html-content/199102179)
 
