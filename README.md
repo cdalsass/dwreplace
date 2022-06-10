@@ -1,5 +1,5 @@
 #dwreplace
-HTML search and replace command line tool with only Perl as a dependency. Uses iterative approach to match against multiple text sections within multiple files. 
+Search and replace command line tool for large numbers of HTML files with only Perl as a dependency. Uses iterative approach to match against multiple text sections within multiple files. 
 
 ## Quick Start
 
