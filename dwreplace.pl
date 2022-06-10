@@ -321,7 +321,7 @@ foreach $filename (@infiles) {
 sub removeWhiteSpaceAndEscapeRegexp() {
     my ($ins) = @_;
 # remove all regexp meaningful characters.
-    $ins =~ s/([\@\$\|\*\?\]\[\^\/\+\.\"\(\)])/\\$1/isg;
+    $ins =~ s/([\@\$\|\*\?\]\[\^\/\+\.\"\(\\)])/\\$1/isg;
     # add whitespace independence, but only after weird (regular expression) chars have been removed.
     $ins =~ s/\s+/\\s*/isg;
     return $ins;
